@@ -4,15 +4,10 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./App.css";
 import { useState } from "react";
+import productsData from "./data";
 
 function App() {
-  const [products, setProducts] = useState([{
-    id: 1,
-    name: "Cologne",
-    image: "./products/cologne.jpg",
-    desc: "Unisex Cologne",
-    quantity: 0,
-  }]);
+  const [products, setProducts] = useState(productsData);
 
   return (
     <div className="App">
