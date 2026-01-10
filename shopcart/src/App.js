@@ -13,12 +13,18 @@ function App() {
     <div className="App">
       <div className="app-header">
         <h1>Shop to React</h1>
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <div className="cart-info">
+          <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
+          <p>
+            {products.reduce((total, product) => total + product.quantity, 0)}{" "}
+            items
+          </p>
+        </div>
       </div>
       <div className="products-container">
         {products.map((product) => (
           <div key={product.id} className="product-card">
-            <h4>{product.desc}</h4>
+            <h3>{product.desc}</h3>
             <img
               src={product.image}
               alt={product.name}
