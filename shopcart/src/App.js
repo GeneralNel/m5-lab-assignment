@@ -11,14 +11,26 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Shop</h1>
-      {products.map((product) => (
-        <div key={product.id}>
-          <h3>{product.name}</h3>
-          <h4>{product.desc}</h4>
-          <img src={product.image} alt={product.name} />
-        </div>
-      ))}
+      <div className="app-header">
+        <h1>Shop to React</h1>
+        <FontAwesomeIcon icon={faShoppingCart} />
+      </div>
+      <div className="products-container">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <h4>{product.desc}</h4>
+            <img
+              src={product.image}
+              alt={product.name}
+              className="product-image"
+            />
+            <div>
+              <input type="number" value={product.quantity} readOnly />
+              <span>Quantity</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
