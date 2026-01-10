@@ -8,17 +8,16 @@ import productsData from "./data";
 
 function App() {
   const [products, setProducts] = useState(productsData);
-
+  const totalQuantity = products
+    .map((product) => product.quantity)
+    .reduce((total, qty) => total + qty, 0);
   return (
     <div className="App">
       <div className="app-header">
         <h1>Shop to React</h1>
         <div className="cart-info">
           <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
-          <p>
-            {products.reduce((total, product) => total + product.quantity, 0)}{" "}
-            items
-          </p>
+          <p>{totalQuantity} items</p>
         </div>
       </div>
       <div className="products-container">

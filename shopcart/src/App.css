@@ -10,81 +10,94 @@
   background-color: #f5f5f5;
 }
 
-/* Step 4 & 5: Header with site name and cart icon */
+/* Header with site name and cart icon */
 .app-header {
   background-color: #00bcd4;
   color: white;
-  padding: 20px 40px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .app-header h1 {
-  font-size: 24px;
-  font-weight: normal;
+  font-size: 22px;
+  font-weight: 400;
   margin: 0;
+  letter-spacing: 0.5px;
 }
 
 .cart-info {
-  font-size: 16px;
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 15px;
 }
 
-/* Step 2: Product list container */
+.cart-icon {
+  font-size: 18px;
+}
+
+.cart-info p {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Product list container */
 .products-container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
 }
 
-/* Step 2 & 3: Individual product cards */
+/* Individual product cards */
 .product-card {
   background-color: white;
-  border: 1px solid #e0e0e0;
-  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .product-card h3 {
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 15px;
+  font-weight: 400;
   color: #333;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
-/* Step 2: Product image styling */
+/* Product image styling */
 .product-image {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
-  background-color: #fafafa;
+  align-self: flex-start;
 }
 
-/* Step 3: Quantity display */
-.quantity-controls {
+/* Quantity display */
+.product-card > div {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
-.quantity-input {
-  width: 60px;
-  padding: 8px;
+.product-card input[type="number"] {
+  width: 50px;
+  padding: 6px 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 3px;
   text-align: center;
   font-size: 14px;
+  background-color: white;
 }
 
-.quantity-controls span {
-  font-size: 14px;
+.product-card span {
+  font-size: 13px;
   color: #666;
+  font-weight: 400;
 }
