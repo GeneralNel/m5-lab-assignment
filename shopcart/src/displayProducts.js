@@ -13,7 +13,6 @@ function DisplayProducts({ products, updateQuantity }) {
     }
 
     return (
-
         <div className="products-container">
             {products.map((product) => (
                 <div key={product.id} className="product-card">
