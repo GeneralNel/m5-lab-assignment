@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { useState } from "react";
-import productsData from "./data";
+import productsData from "./products";
 import Navbar from "./navbar";
 import DisplayProducts from "./displayProducts";
 
