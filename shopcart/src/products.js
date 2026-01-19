@@ -6,7 +6,7 @@ const products = [
     image: "./products/cologne.jpg",
     desc: "Unisex Cologne",
     quantity: 0,
-    ratings: "4.5/5",
+    ratings: "4.5",
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ const products = [
     image: "./products/iwatch.jpg",
     desc: "Apple iWatch",
     quantity: 0,
-    ratings: "4.7/5",
+    ratings: "4.7",
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ const products = [
     image: "./products/mug.jpg",
     desc: "Unique Mug",
     quantity: 0,
-    ratings: "4.2/5",
+    ratings: "4.2",
   },
   {
     id: 4,
@@ -30,7 +30,7 @@ const products = [
     image: "./products/wallet.jpg",
     desc: "Mens Wallet",
     quantity: 0,
-    ratings: "3.3/5",
+    ratings: "3.3",
   },
 ];
 

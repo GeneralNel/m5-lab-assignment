@@ -76,6 +76,7 @@
   height: 100px;
   object-fit: contain;
   align-self: flex-start;
+  cursor: pointer;
 }
 
 /* Quantity display */
