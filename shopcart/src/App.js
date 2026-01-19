@@ -4,8 +4,8 @@ import "./App.css";
 import { useState } from "react";
 import productsData from "./products";
 import Navbar from "./navbar";
-import DisplayProducts from "./displayProducts";
 import Cart from "./cart";
+import Home from "./home";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -28,8 +28,8 @@ function App() {
   return (
     <div className="App">
       <Navbar totalQuantity={totalQuantity} />
-      <Cart cartItems={products.filter(product => product.quantity >= 0)} />
-      {/* <DisplayProducts products={products} setProducts={setProducts} updateQuantity={updateQuantity} /> */}
+      {/* <Cart cartItems={products.filter(product => product.quantity > 0)} /> */}
+      <Home products={products} setProducts={setProducts} updateQuantity={updateQuantity} />
     </div>
   );
 }
