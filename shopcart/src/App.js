@@ -4,8 +4,7 @@ import "./App.css";
 import { useState } from "react";
 import productsData from "./products";
 import Navbar from "./navbar";
-import Cart from "./cart";
-import Home from "./home";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -26,11 +25,16 @@ function App() {
     setProducts(updatedProducts);
   }
   return (
-    <div className="App">
-      <Navbar totalQuantity={totalQuantity} />
-      {/* <Cart cartItems={products.filter(product => product.quantity > 0)} /> */}
-      <Home products={products} setProducts={setProducts} updateQuantity={updateQuantity} />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar
+          totalQuantity={totalQuantity}
+          products={products}
+          setProducts={setProducts}
+          updateQuantity={updateQuantity}
+        />
+      </div>
+    </Router>
   );
 }
 

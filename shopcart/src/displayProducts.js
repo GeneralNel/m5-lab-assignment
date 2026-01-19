@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from 'react-bootstrap';
+import { Modal, Row, Col } from 'react-bootstrap';
 import { faPlusSquare, faMinusSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,20 +17,22 @@ function DisplayProducts({ products, updateQuantity }) {
             {products.map((product) => (
                 <div key={product.id} className="product-card">
                     <h3>{product.desc}</h3>
-                    <img
-                        src={product.image}
-                        alt={product.name}
-                        className="product-image"
-                        onClick={() => handleShow(product)}
-                    />
-                    <div>
-                        <FontAwesomeIcon icon={faPlusSquare} className="icon" onClick={() => updateQuantity(product.id, 1)} />
-                        <FontAwesomeIcon icon={faMinusSquare} className="icon" onClick={() => updateQuantity(product.id, -1)} />
-                        <div className="quantity-display">
-                            <input type="number" value={product.quantity} readOnly />
-                            <span>Quantity</span>
-                        </div>
-                    </div>
+                    <Row className="align-items-center">
+                        <Col xs="auto">
+                            <img
+                                src={product.image}
+                                alt={product.name}
+                                className="product-image"
+                                onClick={() => handleShow(product)}
+                            />
+                        </Col>
+                        <Col xs="auto" className="d-flex align-items-center gap-2">
+                            <FontAwesomeIcon icon={faPlusSquare} className="icon" onClick={() => updateQuantity(product.id, 1)} />
+                            <FontAwesomeIcon icon={faMinusSquare} className="icon" onClick={() => updateQuantity(product.id, -1)} />
+                            <input type="number" value={product.quantity} readOnly className="quantity-input" />
+                            <span>Qty</span>
+                        </Col>
+                    </Row>
                 </div>
             ))}
             <Modal show={show} onHide={handleClose}>
