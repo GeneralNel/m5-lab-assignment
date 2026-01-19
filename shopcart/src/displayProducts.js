@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import { faPlusSquare, faMinusSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function DisplayProducts({ products }) {
+function DisplayProducts({ products, updateQuantity }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const [showImage, setShowImage] = useState({});
@@ -9,6 +11,7 @@ function DisplayProducts({ products }) {
         setShow(true);
         setShowImage(product);
     }
+
     return (
 
         <div className="products-container">
@@ -22,8 +25,12 @@ function DisplayProducts({ products }) {
                         onClick={() => handleShow(product)}
                     />
                     <div>
-                        <input type="number" value={product.quantity} readOnly />
-                        <span>Quantity</span>
+                        <FontAwesomeIcon icon={faPlusSquare} className="icon" onClick={() => updateQuantity(product.id, 1)} />
+                        <FontAwesomeIcon icon={faMinusSquare} className="icon" onClick={() => updateQuantity(product.id, -1)} />
+                        <div className="quantity-display">
+                            <input type="number" value={product.quantity} readOnly />
+                            <span>Quantity</span>
+                        </div>
                     </div>
                 </div>
             ))}

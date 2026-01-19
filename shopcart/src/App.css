@@ -39,6 +39,10 @@
   font-size: 18px;
 }
 
+.icon {
+  cursor: pointer;
+}
+
 .cart-info p {
   margin: 0;
   font-weight: 400;
