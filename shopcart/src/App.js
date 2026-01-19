@@ -1,10 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./App.css";
 import { useState } from "react";
 import productsData from "./data";
+import Navbar from "./navbar";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -13,13 +12,7 @@ function App() {
     .reduce((total, qty) => total + qty, 0);
   return (
     <div className="App">
-      <div className="app-header">
-        <h1>Shop to React</h1>
-        <div className="cart-info">
-          <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
-          <p>{totalQuantity} items</p>
-        </div>
-      </div>
+      <Navbar totalQuantity={totalQuantity} />
       <div className="products-container">
         {products.map((product) => (
           <div key={product.id} className="product-card">
