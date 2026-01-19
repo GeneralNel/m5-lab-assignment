@@ -4,6 +4,7 @@ import "./App.css";
 import { useState } from "react";
 import productsData from "./data";
 import Navbar from "./navbar";
+import DisplayProducts from "./displayProducts";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -13,22 +14,7 @@ function App() {
   return (
     <div className="App">
       <Navbar totalQuantity={totalQuantity} />
-      <div className="products-container">
-        {products.map((product) => (
-          <div key={product.id} className="product-card">
-            <h3>{product.desc}</h3>
-            <img
-              src={product.image}
-              alt={product.name}
-              className="product-image"
-            />
-            <div>
-              <input type="number" value={product.quantity} readOnly />
-              <span>Quantity</span>
-            </div>
-          </div>
-        ))}
-      </div>
+      <DisplayProducts products={products} setProducts={setProducts} />
     </div>
   );
 }
