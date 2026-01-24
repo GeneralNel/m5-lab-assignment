@@ -1,4 +1,4 @@
-import { ListGroup, Row, Col, Image } from 'react-bootstrap';
+import { ListGroup, Row, Col, Image, Button } from 'react-bootstrap';
 
 function Cart({ cartItems }) {
     return (
@@ -19,6 +19,14 @@ function Cart({ cartItems }) {
                     </ListGroup.Item>
                 ))}
             </ListGroup>
+            <Button
+                disabled={cartItems.length === 0}
+                variant="primary"
+                className="mt-4"
+                onClick={() => alert('Proceeding to checkout...')}
+            >
+                Check Out
+            </Button>
         </div>
     );
 }
