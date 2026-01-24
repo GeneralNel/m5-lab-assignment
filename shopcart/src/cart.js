@@ -1,9 +1,12 @@
 import { ListGroup, Row, Col, Image, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Cart({ cartItems }) {
+    const navigate = useNavigate();
     return (
         <div className="container mt-4 pb-5" style={{ maxWidth: '800px' }}>
             <h2 className="mb-4">Your Cart Items</h2>
+            <p>There are {cartItems.length} items in your cart.</p>
             <ListGroup variant="flush">
                 {cartItems.map((item) => (
                     <ListGroup.Item key={item.id} className="py-3">
@@ -19,14 +22,23 @@ function Cart({ cartItems }) {
                     </ListGroup.Item>
                 ))}
             </ListGroup>
-            <Button
-                disabled={cartItems.length === 0}
-                variant="primary"
-                className="mt-4"
-                onClick={() => alert('Proceeding to checkout...')}
-            >
-                Check Out
-            </Button>
+            {(cartItems.length === 0) ?
+                <Button
+                    variant="primary"
+                    className="mt-4"
+                    onClick={() => navigate('/')}
+                >
+                    Continue Shopping
+                </Button>
+                :
+                <Button
+                    variant="primary"
+                    className="mt-4"
+                    onClick={() => navigate('/login')}
+                >
+                    Check Out
+                </Button>
+            }
         </div>
     );
 }

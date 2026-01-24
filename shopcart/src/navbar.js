@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, Routes, Route } from "react-router-dom";
 import Home from "./home";
 import Cart from "./cart";
+import Login from "./login";
 
 function Navbar({ totalQuantity, products, setProducts, updateQuantity }) {
     return (
@@ -27,6 +28,10 @@ function Navbar({ totalQuantity, products, setProducts, updateQuantity }) {
                 <Route
                     path="/cart"
                     element={<Cart cartItems={products.filter(product => product.quantity > 0)} />}
+                />
+                <Route
+                    path="/login"
+                    element={<Login/>}
                 />
             </Routes>
         </div>
