@@ -4,6 +4,7 @@ import { Link, Routes, Route } from "react-router-dom";
 import Home from "./home";
 import Cart from "./cart";
 import Login from "./login";
+import Checkout from "./checkout";
 
 function Navbar({ totalQuantity, products, setProducts, updateQuantity }) {
     return (
@@ -31,7 +32,11 @@ function Navbar({ totalQuantity, products, setProducts, updateQuantity }) {
                 />
                 <Route
                     path="/login"
-                    element={<Login/>}
+                    element={<Login />}
+                />
+                <Route
+                    path="/checkout"
+                    element={<Checkout cartItems={products.filter(product => product.quantity > 0)} />}
                 />
             </Routes>
         </div>

@@ -122,3 +122,7 @@
   color: #666;
   font-weight: 400;
 }
+
+.card-text form {
+  width: 250px;
+}

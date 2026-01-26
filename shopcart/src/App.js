@@ -5,6 +5,7 @@ import { useState } from "react";
 import productsData from "./products";
 import Navbar from "./navbar";
 import { BrowserRouter as Router } from "react-router-dom";
+import { AuthProvider } from "./AuthContext";
 
 function App() {
   const [products, setProducts] = useState(productsData);
@@ -25,16 +26,18 @@ function App() {
     setProducts(updatedProducts);
   }
   return (
-    <Router>
-      <div className="App">
-        <Navbar
-          totalQuantity={totalQuantity}
-          products={products}
-          setProducts={setProducts}
-          updateQuantity={updateQuantity}
-        />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Navbar
+            totalQuantity={totalQuantity}
+            products={products}
+            setProducts={setProducts}
+            updateQuantity={updateQuantity}
+          />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
